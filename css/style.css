@@ -1,0 +1,13 @@
+body {
+  background-image: linear-gradient(to right, #3a6cbc, #4a77c4, #5882cc, #668ed4, #7499dc, #70a6e7, #6cb2f0, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+}
+
+#rut {
+  height: 60px;
+  font-size: 25px;
+  text-transform: uppercase;
+}
+
+.text-big {
+  font-size: 19px;
+}
