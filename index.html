@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es_ES">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Validar RUT Chileno</title>
 
     <meta
       name="description"
@@ -15,184 +14,146 @@
       content="RUT, chileno, rut chileno, validar rut, validar rut en linea, validar rut con javascript"
     />
 
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    <script
+      src="https://kit.fontawesome.com/58e5f1ed41.js"
       crossorigin="anonymous"
-    />
+    ></script>
 
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
-      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="./css/style.css" />
 
-    <!-- Mi CSS -->
-    <link rel="stylesheet" href="css/style.css" />
+    <title>Validar RUT Chileno</title>
   </head>
   <body>
-    <div class="container mt-5">
-      <div class="row">
-        <div class="col m-auto">
-          <form>
-            <div class="card">
-              <div class="card-header text-uppercase text-center text-big">
-                <h1>Validar RUT Chileno</h1>
-              </div>
-              <div class="card-body">
-                <!-- Alerta informa -->
-                <div
-                  id="alerta"
-                  class="alert alert-info alert-dismissible fade show text-center"
-                  role="alert"
-                >
-                  <span id="mensaje"
-                    >Ingrese un RUT en el siguiente campo de texto para validar
-                    si es correcto o no.</span
-                  >
-                </div>
-                <!-- FIN ALERTA -->
-
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1">
-                      <i class="fas fa-id-card text-big"></i>
-                    </span>
-                  </div>
-                  <input
-                    name="rut"
-                    id="rut"
-                    type="text"
-                    class="form-control"
-                    placeholder="Ingrese un RUT"
-                    onkeypress="return isNumber(event)"
-                    oninput="checkRut(this)"
-                    required
-                  />
-                </div>
-              </div>
-              <div class="card-footer">
-                <button
-                  type="submit"
-                  class="btn btn-primary btn-block btn-lg text-center text-uppercase text-big"
-                >
-                  <i class="fas fa-check-circle"></i> Validar
-                </button>
-              </div>
-            </div>
-            <!-- FIN DIV GENERA CARD DE BOOTSTRAP -->
+    <div class="flex container">
+      <header class="flex card card-main">
+        <h1 class="flex title-card-main">
+          <i class="fa-regular fa-square-check"></i> Validar RUT Chileno
+        </h1>
+        <h2 class="flex subtitle-card-main">
+          Simple herramienta para verificar que un RUT Chileno tenga el formato
+          correcto y coincida con su dígito verificador.
+        </h2>
+      </header>
+      <main class="flex">
+        <section class="flex card card-input-rut">
+          <h2 class="flex title-card-input-rut">
+            <i class="fa-regular fa-keyboard"></i> Ingresar un RUT para Validar
+          </h2>
+          <div class="message">
+            <p id="alerta">
+              <span id="mensaje"
+                >Ingrese un RUT en el siguiente campo de texto para saber si el
+                dígito verificador coincide con el cuerpo del RUT.</span
+              >
+            </p>
+          </div>
+          <form class="flex input-rut" action="#">
+            <input
+              name="rut"
+              id="rut"
+              type="text"
+              class="input-validate-rut"
+              placeholder="Ingrese un RUT"
+              onkeypress="return isNumber(event)"
+              oninput="checkRut(this)"
+              required=""
+            />
+            <button class="button-validate-rut" type="submit">Validar</button>
           </form>
-          <!-- FIN FORMULARIO VALIDADOR DE RUT -->
-        </div>
-        <!-- END COLUMNA FORMULARIO VALIDADOR -->
-      </div>
-      <!-- END FILA FORMULARIO VALIDADOR -->
+        </section>
 
-      <div class="row">
-        <div class="col-md-4 col-sm-12 mt-4">
-          <div class="card">
-            <div class="card-header text-big font-weight-bold">
-              <i class="fas fa-question-circle"></i> ¿Qué es Validador de RUT?
+        <div class="flex info-section">
+          <section class="card card-info card-info-main">
+            <h2 class="flex title-card-info">
+              <i class="fa-solid fa-clipboard-question"></i> ¿Cómo funciona?
+            </h2>
+            <div class="card-body-info">
+              <p>
+                Básicamente el usuario debe ingresar un RUT en el Input de Texto
+                que se encuentra en la tarjeta de arriba y el Script JS
+                analizará los datos mediante se van ingresando los dígitos.
+              </p>
+
+              <p>
+                Si el RUT es menor a 7 dígitos, se considera que el RUT es muy
+                corto.
+              </p>
+
+              <p>
+                Si el RUT no coincide con el dígito verificador, se considera
+                que el RUT es Inválido.
+              </p>
+
+              <p>
+                Por el contrario, si el RUT coincide con el dígito verificador
+                (Dígito luego del Guión) se considera que el RUT es válido. El
+                método Utilizado es el siguiente
+                <a
+                  href="https://cauditor2.blogspot.com/2009/09/modulo-11-o-validador-de-rut.html"
+                  target="_blank"
+                  >"Módulo 11".</a
+                >
+              </p>
             </div>
-            <div class="card-body">
+          </section>
+
+          <section class="card card-info">
+            <h2 class="flex title-card-info">
+              <i class="fa-solid fa-clipboard-question"></i> ¿Qué es Validador
+              de RUT?
+            </h2>
+            <div class="card-body-info">
               <p>
                 Validador de RUT es un pequeño script escrito con HTML,
                 JavaScript y CSS para validar los RUT de Chile en base al método
                 de validación de RUT del "Módulo 11".
               </p>
-              <p class="card-title text-big font-weight-bold">
-                <i class="fas fa-question-circle"></i> ¿Qué es el Módulo 11?
-              </p>
+            </div>
+          </section>
+
+          <section class="card card-info">
+            <h2 class="flex title-card-info">
+              <i class="fa-solid fa-clipboard-question"></i> ¿Qué es el Módulo
+              11?
+            </h2>
+            <div class="card-body-info">
               <p>
                 El "módulo 11" es un método de valicación de RUT en Chile que se
                 ocupa para verificar si el "resto" del cuerpo del RUT coincide
                 con el dígito verificador (El Número que va luego del guión).
               </p>
             </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-12 mt-4">
-          <div class="card">
-            <div class="card-header text-big font-weight-bold">
-              <i class="fas fa-cog fa-spin"></i> ¿Cómo funciona?
-            </div>
-            <div class="card-body">
-              <p>
-                Básicamente el usuario debe ingresar un RUT en el Input de Texto
-                que se encuentra en la tarjeta de arriba y el Script JS
-                analizará los datos mediante se van ingresando los dígitos.
-              </p>
-              <p>
-                Si el RUT es menor a 7 dígitos, se considera que el RUT es muy
-                corto.
-              </p>
-              <p>
-                Si el RUT no coincide con el dígito verificador, se considera
-                que el RUT es Inválido.
-              </p>
-              <p>
-                Por el contrario, si el RUT coincide con el dígito verificador
-                (Dígito luego del Guión) se considera que el RUT es válido.
-              </p>
+          </section>
 
-              <p>
-                El método Utilizado es el siguiente
-                <a
-                  href="http://cauditor2.blogspot.com/2009/09/modulo-11-o-validador-de-rut.html"
-                  >"Módulo 11"</a
-                >.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-12 mt-4">
-          <div class="card">
-            <div class="card-header text-big font-weight-bold">
-              <i class="fas fa-code"></i> Código Fuente
-            </div>
-            <div class="card-body">
+          <section class="card card-info">
+            <h2 class="flex title-card-info">
+              <i class="fa-solid fa-code"></i> Código Fuente
+            </h2>
+            <div class="card-body-info">
               <p>
                 Si usted quiere tomar este ejemplo para uso suyo, no hay
                 problema el repositorio que contiene este ejemplo se encuentra
                 en el siguiente enlace:
-                <a href="https://uncodigo.com/herramienta-validador-de-rut-chileno-online/">"Validador de RUT con JavaScript Modulo 11"</a>
+                <a
+                  href="https://uncodigo.com/herramienta-validador-de-rut-chileno-online/"
+                  target="_blank"
+                  >"Validador de RUT con JavaScript Modulo 11".</a
+                >
               </p>
             </div>
-          </div>
+          </section>
         </div>
-      </div>
-
-      <!-- FOOTER -->
-      <div class="row mt-5 mb-5">
-        <div class="col-12 text-center">
-          <div class="badge badge-light">
-            Validador de RUT 2019 -
-            <a href="https://uncodigo.com">uncodigo.com</a>
-          </div>
-        </div>
-      </div>
+      </main>
+      <footer class="flex">
+        <span class="title-footer"> Validador de RUT </span>
+        <span>
+          <a class="copy-link" href="https://uncodigo.com">
+            <i class="fa-solid fa-terminal"></i> uncodigo.com
+          </a>
+        </span>
+      </footer>
     </div>
 
-    <!-- SCRIPT VALIDADOR -->
-    <script src="js/script.js"></script>
-
-    <!-- Script Bootstrap -->
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-      crossorigin="anonymous"
-    ></script>
+    <script src="./js/script.js"></script>
   </body>
 </html>
