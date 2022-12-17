@@ -212,6 +212,7 @@ h2.title-card-info {
   padding: 1rem;
   color: #e3e3e3;
   border-radius: 1rem;
+  margin: 0 1rem;
 }
 
 .message p.alert-info {
