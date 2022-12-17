@@ -1,11 +1,14 @@
 // Capturando el DIV alerta y mensaje
-var alerta = document.getElementById("alerta");
-var mensaje = document.getElementById("mensaje");
+let alerta = document.getElementById("alerta");
+let mensaje = document.getElementById("mensaje");
 
-// Permitir sólo números en el imput
+// Permitir sólo números y letra K en el imput
 function isNumber(evt) {
-  var charCode = evt.which ? evt.which : event.keyCode;
-  if (charCode > 31 && (charCode < 48 || charCode > 57) && charCode === 75) return false;
+  let charCode = evt.which;
+
+  if (charCode > 31 && (charCode < 48 || charCode > 57) && charCode === 75) {
+    return false;
+  }
 
   return true;
 }
@@ -19,17 +22,17 @@ function checkRut(rut) {
   }
 
   // Obtiene el valor ingresado quitando puntos y guión.
-  var valor = clean(rut.value);
+  let valor = clean(rut.value);
 
   // Divide el valor ingresado en dígito verificador y resto del RUT.
-  cuerpo = valor.slice(0, -1);
-  dv = valor.slice(-1).toUpperCase();
+  let bodyRut = valor.slice(0, -1);
+  let dv = valor.slice(-1).toUpperCase();
 
   // Separa con un Guión el cuerpo del dígito verificador.
   rut.value = format(rut.value);
 
   // Si no cumple con el mínimo ej. (n.nnn.nnn)
-  if (cuerpo.length < 7) {
+  if (bodyRut.length < 7) {
     rut.setCustomValidity("RUT Incompleto");
     alerta.classList.remove('alert-success', 'alert-danger');
     alerta.classList.add('alert-info');
@@ -42,9 +45,9 @@ function checkRut(rut) {
   multiplo = 2;
 
   // Para cada dígito del Cuerpo
-  for (i = 1; i <= cuerpo.length; i++) {
+  for (i = 1; i <= bodyRut.length; i++) {
     // Obtener su Producto con el Múltiplo Correspondiente
-    index = multiplo * valor.charAt(cuerpo.length - i);
+    index = multiplo * valor.charAt(bodyRut.length - i);
 
     // Sumar al Contador General
     suma = suma + index;
@@ -91,7 +94,7 @@ function format (rut) {
     result = rut.slice(-3 - i, -i) + '.' + result
   }
 
-  return result
+  return result;
 }
 
 function clean (rut) {
