@@ -10,6 +10,6 @@ Recientemente ha recibido una modificación en su estructura HTML y reglas CSS p
 
 El resultado es el siguiente:
 
-![alt text](https://github.com/felipejoq/validar-rut-chileno/blob/master/image.jpg?raw=true)
+![alt text](https://github.com/felipejoq/validar-rut-chileno/blob/master/preview.jpg?raw=true)
 
 https://uncodigo.com/
