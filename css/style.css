@@ -121,11 +121,6 @@ h2.title-card-input-rut {
   font-weight: 400;
 }
 
-.message {
-  text-align: center;
-  padding: 0rem 1rem;
-}
-
 form.input-rut {
   justify-content: center;
   gap: 0.5rem;
@@ -208,6 +203,27 @@ h2.title-card-info {
   text-decoration: none;
   color: #f95959;
   font-weight: 700;
+}
+
+.message p {
+  font-weight: 400;
+  font-size: 1.1rem;
+  background-color: #455d7a;
+  padding: 1rem;
+  color: #e3e3e3;
+  border-radius: 1rem;
+}
+
+.message p.alert-info {
+  background-color: #617996;
+}
+
+.message p.alert-danger {
+  background-color: #ca3a3a;
+}
+
+.message p.alert-success {
+  background-color: #46a754;
 }
 
 @media screen and (max-width: 1297px) {
