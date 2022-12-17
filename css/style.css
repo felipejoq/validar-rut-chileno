@@ -169,7 +169,7 @@ form .button-validate-rut:hover {
 
 .info-section {
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   gap: 1rem;
   align-items: baseline;
   padding: 1rem 0rem 2rem 0rem;
