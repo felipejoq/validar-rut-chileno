@@ -80,11 +80,11 @@ footer {
 
 .card {
   border-radius: 1rem;
-  padding: 0rem 0rem 1rem;
+  padding: 0 0 1rem;
   background-color: #e3e3e3;
-  -webkit-box-shadow: 0px 0px 6px -1px rgba(35, 49, 66, 1);
-  -moz-box-shadow: 0px 0px 6px -1px rgba(35, 49, 66, 1);
-  box-shadow: 0px 0px 6px -1px rgba(35, 49, 66, 1);
+  -webkit-box-shadow: 0 0 6px -1px rgba(35, 49, 66, 1);
+  -moz-box-shadow: 0 0 6px -1px rgba(35, 49, 66, 1);
+  box-shadow: 0 0 6px -1px rgba(35, 49, 66, 1);
 }
 
 .card-main {
@@ -94,7 +94,7 @@ footer {
 h1.title-card-main {
   justify-content: center;
   width: 100%;
-  border-radius: 1rem 1rem 0rem 0rem;
+  border-radius: 1rem 1rem 0 0;
   padding: 0.5rem;
   background-color: #233142;
   border-bottom: 1px solid #fff;
@@ -103,7 +103,7 @@ h1.title-card-main {
 h2.subtitle-card-main {
   color: #233142;
   font-weight: 400;
-  padding: 0rem 1rem;
+  padding: 0 1rem;
 }
 
 h2.subtitle-card-main,
@@ -113,7 +113,7 @@ h2.title-card-input-rut {
 
 h2.title-card-input-rut {
   width: 100%;
-  border-radius: 1rem 1rem 0rem 0rem;
+  border-radius: 1rem 1rem 0 0;
   padding: 0.5rem;
   color: #e3e3e3;
   border-bottom: 1px solid #fff;
@@ -121,29 +121,43 @@ h2.title-card-input-rut {
   font-weight: 400;
 }
 
-form.input-rut {
+.input-rut {
   justify-content: center;
   gap: 0.5rem;
-  padding: 0rem 1rem 0rem 1rem;
+  padding: 0 1rem 0 1rem;
   width: 100%;
 }
 
-form .input-validate-rut {
-  border: 1px solid #455d7a;
-  border-radius: 1rem 0rem 0rem 1rem;
+.input-validate-rut {
+  border: 2px solid #455d7a;
+  border-radius: 1rem 0 0 1rem;
   font-size: 1.5rem;
   font-weight: 400;
   width: 50rem;
   padding: 1rem 1rem 1rem 2rem;
 }
 
-form .input-validate-rut::placeholder {
+.input-show-dv {
+  border: 2px solid #455d7a;
+  border-radius: 0;
+  font-size: 1.5rem;
+  width: 10rem;
+}
+
+.input-show-dv-success {
+  border: 2px solid #46a754;
+}
+
+.input-show-dv-error {
+  border: 2px solid #ca3a3a;
+}
+
+.input-validate-rut::placeholder, .input-show-dv::placeholder {
   color: #b6b6b6;
 }
 
 form .button-validate-rut {
-  border-radius: 0rem 1rem 1rem 0rem;
-  border: 1px solid #233142;
+  border-radius: 0 1rem 1rem 0;
   font-weight: 400;
   border: none;
   background-color: #455d7a;
@@ -172,11 +186,11 @@ form .button-validate-rut:hover {
   justify-content: space-between;
   gap: 1rem;
   align-items: baseline;
-  padding: 1rem 0rem 2rem 0rem;
+  padding: 1rem 0 2rem 0;
 }
 
 .card-info {
-  padding: 0rem 0rem 1rem 0rem;
+  padding: 0 0 1rem 0;
   width: 25rem;
 }
 
@@ -186,7 +200,7 @@ h2.title-card-info {
   width: 100%;
   font-weight: 400;
   background-color: #233142;
-  border-radius: 1rem 1rem 0rem 0rem;
+  border-radius: 1rem 1rem 0 0;
   border-bottom: 1px solid #ffffff;
   padding: 0.5rem 1rem 0.5rem 1rem;
 }
@@ -246,7 +260,7 @@ h2.title-card-info {
   }
 
   form .input-validate-rut {
-    border-radius: 1rem 1rem 0rem 0rem;
+    border-radius: 1rem 1rem 0 0;
     width: 100%;
   }
 
@@ -256,7 +270,7 @@ h2.title-card-info {
   }
 
   form .button-validate-rut {
-    border-radius: 0rem 0rem 1rem 1rem;
+    border-radius: 0 0 1rem 1rem;
     width: 100%;
   }
 
