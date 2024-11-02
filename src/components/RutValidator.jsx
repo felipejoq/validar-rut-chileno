@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { getDVRut } from "@utils/rut.validations";
 
 export const RutValidator = () => {
-  const [message, setMessage] = useState("ℹ️ Ingrese un RUT para validar");
   const [rut, setRut] = useState({ body: '', dv: '0' });
   const [highlight, setHighlight] = useState(false);
 
@@ -55,7 +54,7 @@ export const RutValidator = () => {
           </div>
         </div>
         <div className='text-sm rounded border-1 text-gray-600 py-3 px-2'>
-          {message}
+          ℹ️ Ingrese un RUT para validar
         </div>
       </form>
     </div>
