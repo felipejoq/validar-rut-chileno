@@ -28,6 +28,10 @@ Primero, clona el repositorio en tu máquina local:
 ```bash
 git clone https://github.com/tuusuario/rut-chile-calculador.git
 cd rut-chile-calculador
+```
+
+### Instalar dependencias y correr el proyecto para desarrollo
+```bash
 bun install # o npm, pnpm, yarn, etc.
 bun dev
 ```
