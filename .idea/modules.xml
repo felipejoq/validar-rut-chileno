@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/validar-rut-chileno.iml" filepath="$PROJECT_DIR$/.idea/validar-rut-chileno.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/validar-rut.iml" filepath="$PROJECT_DIR$/.idea/validar-rut.iml" />
     </modules>
   </component>
 </project>

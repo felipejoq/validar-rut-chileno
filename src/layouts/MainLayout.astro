@@ -1,0 +1,36 @@
+---
+import Header from '@components/shared/Header.astro';
+interface Props {
+    title?: string;
+    description?: string;
+}
+
+const {
+    title = "Validador de RUT Chileno",
+    description= "Usando el algoritmo de Módulo 11 se hace una verificación del formato del RUT Chileno para conocer su dígito verificador y verificar si tiene correcto formato"
+} = Astro.props;
+---
+
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- SEO TAGs -->
+    <meta name="title" content={title} />
+    <meta name="author" content="Felipe JQ." />
+    <meta name="description" content={description} />
+
+    <title>{title}</title>
+</head>
+<body class="flex flex-col items-center justify-start h-screen bg-gray-100 py-5">
+<Header />
+<main class="w-full max-w-2xl min-w-80 px-4">
+    <slot />
+</main>
+<footer class="text-center mt-8">
+    <div class="text-gray-600 mb-4 hover:underline">
+        <a href="https://uncodigo.com/">By Felipe JQ.</a>
+    </div>
+</footer>
+</body>
+</html>

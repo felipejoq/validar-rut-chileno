@@ -1,0 +1,65 @@
+---
+import MainLayout from "@layouts/MainLayout.astro";
+import Section from "@components/shared/Section.astro";
+import Article from "@components/shared/Article.astro";
+import { RutValidator } from "@components/RutValidator";
+---
+
+<MainLayout>
+    <Section>
+        <Article>
+            <RutValidator client:load/>
+        </Article>
+    </Section>
+    <Section>
+        <Article>
+            <h2>¿De qué se trata esto?</h2>
+            <p>
+                Este es un pequeño validador de RUT Chilenos, verifica si el cuerpo del RUT coincide con su dígito
+                verificador usando un algoritmo conocido como Módulo 11.
+            </p>
+            <p>
+                Para usarlo solo debe el cuerpo del RUT en el primer campo y automáticamente se calculará el dígito verificador.
+            </p>
+            <p>
+                Por ejemplo, para el RUT: <i>58883882-k</i> solo debe ingresar <i>58883882</i> y automáticamente se
+                calculará el dígito verificador que es K.
+            </p>
+
+            <h2>¿Cómo se hace?</h2>
+            <p>
+                El algoritmo de Módulo 11 se utiliza para calcular el dígito verificador de un RUT chileno. Este dígito se obtiene a partir del cuerpo del RUT mediante una serie de multiplicaciones y sumas.
+            </p>
+
+            <p>
+                Para calcular el dígito verificador, se siguen los siguientes pasos:
+            </p>
+            <ol>
+                <li>Se toma el cuerpo del RUT y se multiplica cada dígito, de derecha a izquierda, por los números 2, 3, 4, 5, 6 y 7, repitiendo esta secuencia hasta terminar con todos los dígitos.</li>
+                <li>Se suman todos los productos obtenidos en el paso anterior.</li>
+                <li>El resultado de la suma se divide por 11 y se obtiene el residuo de esta división.</li>
+                <li>El dígito verificador se obtiene restando el residuo a 11. Si el resultado es 11, el dígito verificador es 0. Si el resultado es 10, el dígito verificador es K. En cualquier otro caso, el resultado es el dígito verificador.</li>
+            </ol>
+
+            <p>
+                Por ejemplo, para el RUT: <i>58883882</i> se hace la siguiente operación:
+            </p>
+            <p>
+                <i>(5*3) + (8*2) + (8*7) + (8*6) + (3*5) + (8*4) + (8*3) + (2*2)</i> = 15 + 16 + 56 + 48 + 15 + 32 + 24 + 4 = 210
+            </p>
+            <p>
+                Luego, se divide 210 por 11, el residuo de esta división es 1, por lo tanto el dígito verificador es 11 - 1 = 10, que se representa como K.
+            </p>
+
+        </Article>
+    </Section>
+</MainLayout>
+
+<style is:global>
+    .highlight{
+        @apply bg-green-100;
+    }
+    input[type="text"]{
+        @apply px-4 py-2 text-2xl border-2 border-gray-300 rounded w-full;
+    }
+</style>

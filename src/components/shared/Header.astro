@@ -1,0 +1,15 @@
+---
+interface Props {
+    title?: string;
+}
+
+const {
+    title = "Validador de RUT Chileno"
+} = Astro.props;
+---
+
+<header class="text-center mb-8">
+    <h1 class="text-3xl font-bold">
+        {title}
+    </h1>
+</header>
