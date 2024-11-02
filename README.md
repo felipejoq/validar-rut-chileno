@@ -14,7 +14,7 @@ El cálculo del dígito verificador en Chile se realiza a través del algoritmo 
 ## ✨ Tecnologías Utilizadas
 
 - **Astro:** Framework utilizado para el desarrollo de la interfaz y estructura de la aplicación.
-- **JavaScript:** Para implementar el algoritmo de cálculo del dígito verificador.
+- **JavaScript/TypeScript:** Para implementar el algoritmo de cálculo del dígito verificador.
 - **Bun:** Herramienta para la gestión de dependencias y el entorno de desarrollo.
 
 ## 📂 Instalación y Uso
