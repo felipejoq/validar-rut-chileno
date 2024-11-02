@@ -2,6 +2,9 @@
 
 Este proyecto es una aplicación web simple desarrollada con [Astro](https://astro.build/), que permite calcular el dígito verificador de un RUT chileno utilizando el algoritmo de módulo 11. La herramienta está pensada para facilitar la validación de RUTs, permitiendo al usuario ingresar el número base del RUT (sin el dígito verificador) y obteniendo como resultado el dígito correspondiente.
 
+## 📄 Demo
+Puedes ver la aplicación en funcionamiento en el siguiente enlace: [RUT Chile - Calculador de Dígito Verificador](https://rut-chileno.uncodigo.com/)
+
 ## 🚀 Características
 
 - **Cálculo automático:** El usuario solo debe ingresar el cuerpo del RUT, y la aplicación se encarga de realizar el cálculo del dígito verificador.
