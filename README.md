@@ -1,42 +1,47 @@
-# RUT Chile - Calculador de Dígito Verificador
+# Astro Starter Kit: Minimal
 
-Este proyecto es una aplicación web simple desarrollada con [Astro](https://astro.build/), que permite calcular el dígito verificador de un RUT chileno utilizando el algoritmo de módulo 11. La herramienta está pensada para facilitar la validación de RUTs, permitiendo al usuario ingresar el número base del RUT (sin el dígito verificador) y obteniendo como resultado el dígito correspondiente.
-
-## 📄 Demo
-Puedes ver la aplicación en funcionamiento en el siguiente enlace: [RUT Chile - Calculador de Dígito Verificador](https://rut-chileno.uncodigo.com/)
-
-## 🚀 Características
-
-- **Cálculo automático:** El usuario solo debe ingresar el cuerpo del RUT, y la aplicación se encarga de realizar el cálculo del dígito verificador.
-- **Interfaz simple y amigable:** La aplicación tiene un diseño minimalista, enfocado en la usabilidad y la rapidez.
-
-## 🧩 Algoritmo Módulo 11
-
-El cálculo del dígito verificador en Chile se realiza a través del algoritmo de módulo 11. En este proceso, cada dígito del RUT se multiplica por una secuencia determinada de valores y, a partir de la suma de estos productos, se determina el dígito verificador, que puede ser un número entre 0 y 9 o la letra "K".
-
-## ✨ Tecnologías Utilizadas
-
-- **Astro:** Framework utilizado para el desarrollo de la interfaz y estructura de la aplicación.
-- **JavaScript/TypeScript:** Para implementar el algoritmo de cálculo del dígito verificador.
-- **Bun:** Herramienta para la gestión de dependencias y el entorno de desarrollo.
-
-## 📂 Instalación y Uso
-
-A continuación, los pasos para clonar el repositorio, instalar las dependencias y correr el proyecto en un entorno local.
-
-### Clonar el repositorio
-
-Primero, clona el repositorio en tu máquina local:
-
-```bash
-git clone https://github.com/tuusuario/rut-chile-calculador.git
-cd rut-chile-calculador
+```sh
+npm create astro@latest -- --template minimal
 ```
 
-### Instalar dependencias y correr el proyecto para desarrollo
-```bash
-bun install # o npm, pnpm, yarn, etc.
-bun dev
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
+[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+
+## 🚀 Project Structure
+
+Inside of your Astro project, you'll see the following folders and files:
+
+```text
+/
+├── public/
+├── src/
+│   └── pages/
+│       └── index.astro
+└── package.json
 ```
 
-Desarrollado por [Felipe](https://uncodigo.com/)
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+
+Any static assets, like images, can be placed in the `public/` directory.
+
+## 🧞 Commands
+
+All commands are run from the root of the project, from a terminal:
+
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
+
+## 👀 Want to learn more?
+
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).

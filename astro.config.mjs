@@ -1,19 +1,18 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 
-import tailwind from '@astrojs/tailwind';
-
 import react from '@astrojs/react';
 
-import cloudflare from '@astrojs/cloudflare';
+import netlify from '@astrojs/netlify';
+
+import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  devToolbar: {
-    enabled: false,
-  },
+  integrations: [react()],
+  adapter: netlify(),
 
-  integrations: [tailwind(), react()],
-  output: 'server',
-  adapter: cloudflare()
+  vite: {
+    plugins: [tailwindcss()]
+  }
 });
