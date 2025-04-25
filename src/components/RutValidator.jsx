@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
-import { getDVRut } from "@utils/rut.validations";
+import { getDVRut, validateRut } from "@utils/rut.validations";
 
 export const RutValidator = () => {
   const [rut, setRut] = useState({ body: '', dv: '0' });
   const [highlight, setHighlight] = useState(false);
+  const [isValid, setIsValid] = useState(false);
 
   const handleChange = (e) => {
     const { value } = e.target;
@@ -11,6 +12,7 @@ export const RutValidator = () => {
     const dv = (rutBody.length > 0) ? getDVRut(rutBody) : '';
     setRut({ body: rutBody, dv });
     setHighlight(true);
+    setIsValid(validateRut(`${rutBody}-${dv}`));
   };
 
   useEffect(() => {
@@ -53,8 +55,15 @@ export const RutValidator = () => {
             />
           </div>
         </div>
-        <div className='text-sm rounded border-1 text-gray-600 py-3 px-2'>
-          ℹ️ Ingrese un RUT para validar
+        <div className='text-sm rounded border-1 border-gray-200 text-gray-600 p-2 flex flex-col gap-2'>
+          <div>ℹ️ Ingrese un RUT para validar</div>
+          <div>
+            {
+              isValid
+                ? <span className="p-1 bg-green-100 text-green-800 rounded">El rut ingresado es válido DV: {rut.dv}</span>
+                : <span className="p-1 bg-red-100 text-red-800 rounded" >El rut ingresado no es válido</span>
+            }
+          </div>
         </div>
       </form>
     </div>

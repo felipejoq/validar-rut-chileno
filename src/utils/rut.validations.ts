@@ -18,3 +18,22 @@ export const getDVRut = (rut: string): string => {
         return remainder.toString();
     }
 };
+
+export const validateRut = (rut: string): boolean => {
+    // Eliminar puntos y guiones
+    const cleanedRut = rut.replace(/\./g, '').replace(/-/g, '');
+
+    // Verificar si el RUT tiene un formato válido
+    if (!/^\d{1,8}[0-9K]$/.test(cleanedRut)) {
+        return false;
+    }
+
+    // Separar el cuerpo y el dígito verificador
+    const body = cleanedRut.slice(0, -1);
+    const dv = cleanedRut.slice(-1).toUpperCase();
+
+    // Calcular el dígito verificador esperado
+    const expectedDv = getDVRut(body);
+
+    return dv === expectedDv;
+};
